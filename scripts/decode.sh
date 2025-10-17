@@ -32,7 +32,7 @@ fi
 
 # start decoding
 export PYTHONPATH="${ROOT}/fairseq:$PYTHONPATH"
-CUDA_VISIBLE_DEVICES=0 python -B ${MODEL_SRC}/vsp_llm_decode.py \
+CUDA_VISIBLE_DEVICES=0 uv run python ${MODEL_SRC}/vsp_llm_decode.py \
     --config-dir ${MODEL_SRC}/conf \
     --config-name s2s_decode \
         common.user_dir=${MODEL_SRC} \

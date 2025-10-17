@@ -16,13 +16,8 @@ Move the checkpoint to [`checkpoints`](checkpoints/).
 ## Preparation
 
 ```
-conda create -n vsp-llm python=3.9 -y
-conda activate vsp-llm
 git clone https://github.com/Sally-SH/VSP-LLM.git
-cd VSP-LLM
-pip install -r requirements.txt
-cd fairseq
-pip install --editable ./
+uv sync
 ```
 
 - Download AV-HuBERT pre-trained model `AV-HuBERT Large (LSR3 + VoxCeleb2)` from [here](http://facebookresearch.github.io/av_hubert).
