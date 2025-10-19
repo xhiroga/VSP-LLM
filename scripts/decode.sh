@@ -9,7 +9,7 @@ LANG=en    # language direction (e.g 'en' for VSR task / 'en-es' for En to Es VS
 
 # set paths
 ROOT=$(dirname "$(dirname "$(readlink -fm "$0")")")
-MODEL_SRC=${ROOT}/src
+MODEL_SRC=${ROOT}/src/vsp_llm
 LLM_PATH=${ROOT}/checkpoints/Llama-2-7b-hf   # path to llama checkpoint
 DATA_ROOT=${MODEL_SRC}/dataset   # path to test dataset dir
 

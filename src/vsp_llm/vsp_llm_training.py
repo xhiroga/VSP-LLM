@@ -21,12 +21,7 @@ from omegaconf import MISSING, II
 import numpy as np
 from argparse import Namespace
 
-DBG=True if len(sys.argv) == 1 else False
-
-if DBG:
-    from vsp_llm_dataset import VSP_LLM_dataset
-else:
-    from .vsp_llm_dataset import VSP_LLM_dataset
+from .vsp_llm_dataset import VSP_LLM_dataset
 
 logger = logging.getLogger(__name__)
 

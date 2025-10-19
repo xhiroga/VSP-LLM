@@ -11,7 +11,7 @@ DATA_PATH=???   # path to train dataset dir
 OUT_PATH=???    # output path to save 
 
 ROOT=$(dirname "$(dirname "$(readlink -fm "$0")")")
-SRC=${ROOT}/src
+SRC=${ROOT}/src/vsp_llm
 LLM_PATH=${ROOT}/checkpoints/Llama-2-7b-hf   # path to llama checkpoint
 PRETRAINED_MODEL_PATH=${ROOT}/checkpoints/large_vox_iter5.pt   # path to pretrained avhubert
 

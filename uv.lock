@@ -2239,7 +2239,7 @@ wheels = [
 [[package]]
 name = "vsp-llm"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "bitsandbytes" },
     { name = "cython" },
