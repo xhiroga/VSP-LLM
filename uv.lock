@@ -359,7 +359,7 @@ wheels = [
 [[package]]
 name = "clustering"
 version = "0.1.0"
-source = { virtual = "src/vsp_llm/clustering" }
+source = { editable = "packages/clustering" }
 dependencies = [
     { name = "joblib" },
     { name = "npy-append-array" },
@@ -483,7 +483,7 @@ wheels = [
 
 [[package]]
 name = "fairseq"
-version = "1.0.0a0+3215313"
+version = "1.0.0a0+9fde05b"
 source = { editable = "fairseq" }
 dependencies = [
     { name = "cffi" },

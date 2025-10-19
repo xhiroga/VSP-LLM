@@ -168,13 +168,13 @@ if __name__ == "__main__":
     parser.add_argument("rank", type=int)
     parser.add_argument("feat_dir")
     parser.add_argument("--max_chunk", type=int, default=1600000)
-    parser.add_argument("--user_dir", type=str, default=None)
+    # parser.add_argument("--user_dir", type=str, default=None)
 
     args = parser.parse_args()
     logger.info(args)
-    fairseq.utils.import_user_module(args)
-    sys.path.append(args.user_dir)
-    import utils_vsp_llm as custom_utils
+    # fairseq.utils.import_user_module(args)
+    # sys.path.append(args.user_dir)
+    from vsp_llm import utils_vsp_llm as custom_utils
     kwargs = vars(args)
     kwargs.update({'custom_utils': custom_utils})
     dump_feature(**kwargs)
