@@ -28,7 +28,7 @@ See [here](https://github.com/Sally-SH/VSP-LLM/blob/main/README.md#data-preproce
 To extract features from the 12-th transformer layer of a trained
 AV-HuBERT model saved at `${ckpt_path}`, run:
 ```sh
-uv run dump_hubert_feature.py ${tsv_dir} ${split} ${ckpt_path} 12 ${nshard} ${rank} ${feat_dir} --user_dir `pwd`/../
+uv run src/clustering/dump_hubert_feature.py ${tsv_dir} ${split} ${ckpt_path} 12 ${nshard} ${rank} ${feat_dir} --user_dir `pwd`/../
 ```
 Features would also be saved at `${feat_dir}/${split}_${rank}_${nshard}.{npy,len}`.
 
@@ -38,7 +38,7 @@ Features would also be saved at `${feat_dir}/${split}_${rank}_${nshard}.{npy,len
 ## K-means clustering
 To fit a k-means model with 200 clusters on 10% of the `${split}` data, run
 ```sh
-uv run learn_kmeans.py ${feat_dir} ${split} ${nshard} ${km_path} 200 --percent 0.1
+uv run src/clustering/learn_kmeans.py ${feat_dir} ${split} ${nshard} ${km_path} 200 --percent 0.1
 ```
 This saves the k-means model to `${km_path}`.
 
@@ -49,7 +49,7 @@ This saves the k-means model to `${km_path}`.
 ## K-means application
 To apply a trained k-means model `${km_path}` to obtain labels for `${split}`, run
 ```sh
-uv run dump_km_label.py ${feat_dir} ${split} ${km_path} ${nshard} ${rank} ${lab_dir}
+uv run src/clustering/dump_km_label.py ${feat_dir} ${split} ${km_path} ${nshard} ${rank} ${lab_dir}
 ```
 This would extract labels for the `${rank}`-th shard out of `${nshard}` shards
 and dump them to `${lab_dir}/${split}_${rank}_${shard}.km`
@@ -63,4 +63,4 @@ done > $lab_dir/${split}.km
 ```
 
 ## Count clusters
-You can get `$lab_dir/${split}.cluster_counts ${lab_dir}/${split}_${rank}_${shard}.km`.
+Run `uv run src/clustering/cluster_counts.py ${lab_dir}/${split}_${rank}_${shard}.km`.
