@@ -63,5 +63,4 @@ done > $lab_dir/${split}.km
 ```
 
 ## Count clusters
-Open cluster_counts.py and replace unit_pth to `$lab_dir/${split}.km`.\
-Then you can get `$lab_dir/${split}.cluster_counts`.
+You can get `$lab_dir/${split}.cluster_counts $lab_dir/${split}.km`.
