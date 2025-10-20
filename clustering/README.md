@@ -63,4 +63,4 @@ done > $lab_dir/${split}.km
 ```
 
 ## Count clusters
-You can get `$lab_dir/${split}.cluster_counts $lab_dir/${split}.km`.
+You can get `$lab_dir/${split}.cluster_counts ${lab_dir}/${split}_${rank}_${shard}.km`.
