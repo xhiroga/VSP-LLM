@@ -56,3 +56,6 @@ build-backend = "uv_build"
 
 [tool.uv.workspace]
 members = ["clustering"]
+
+[tool.mypy]
+check_untyped_defs = true

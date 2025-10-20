@@ -19,6 +19,8 @@ import numpy as np
 from python_speech_features import logfbank
 from scipy.io import wavfile
 
+from vsp_llm.hubert import AVHubertModel
+
 logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
@@ -35,7 +37,7 @@ class HubertFeatureReader(object):
             cfg,
             task,
         ) = fairseq.checkpoint_utils.load_model_ensemble_and_task([ckpt_path])
-        self.model = model[0].eval().cuda()
+        self.model: AVHubertModel = model[0].eval().cuda()
         self.task = task
         self.layer = layer
         self.max_chunk = max_chunk
